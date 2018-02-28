@@ -103,9 +103,22 @@ public class Colosseum {
      *         <p>
      */
     public static Pokemon buildPokemon() {
-        Pokemon returnPokemon = null;
+        Pokemon tempPokemon = new Pokemon();
+        System.out.println("What's your pokemon's name?");
+        tempPokemon.setName(myScan.next());
+        System.out.println("Enter a hitpoint value:");
+        tempPokemon.setHitPoints(myScan.nextInt());
+        while (tempPokemon.getHitPoints() < 1 || MAX_HIT_POINTS > tempPokemon.getHitPoints()) {
+            System.out.println("Please enter a value between 1 and 50.");
+            tempPokemon.setHitPoints(myScan.nextInt());
+
+        }
+        return tempPokemon;
+    }
+     /** Pokemon returnPokemon = null;
         return returnPokemon;
     }
+      */
 
     /**
      * Prints who is ahead.
